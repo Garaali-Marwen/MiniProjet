@@ -2,7 +2,9 @@ package com.example.miniprojet;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -18,5 +20,11 @@ public class MainActivity extends AppCompatActivity {
         /*FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
         myRef.setValue("Hello, World!");*/
+
+    }
+
+    public void signUp(View v) {
+        Intent intent = new Intent(this, signUp.class);
+        startActivity(intent);
     }
 }
