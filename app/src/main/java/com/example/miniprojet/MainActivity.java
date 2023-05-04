@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -87,6 +88,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void signUp(View v) {
         Intent intent = new Intent(this, signUp.class);
+        startActivity(intent);
+    }
+
+    public void signOut(View item) {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void profile(View item) {
+        Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
     }
 }

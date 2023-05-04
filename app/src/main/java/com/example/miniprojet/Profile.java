@@ -10,14 +10,13 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-
-public class Courses extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_courses);
+        setContentView(R.layout.activity_profile);
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -26,13 +25,13 @@ public class Courses extends AppCompatActivity {
                 int itemId = item.getItemId();
                 Intent intent;
                 switch (itemId) {
-                    case R.id.profile:
-                        intent = new Intent(Courses.this, Profile.class);
+                    case R.id.home:
+                        intent = new Intent(Profile.this, Courses.class);
                         startActivity(intent);
                         return true;
                     case R.id.logout:
                         FirebaseAuth.getInstance().signOut();
-                        intent = new Intent(Courses.this, MainActivity.class);
+                        intent = new Intent(Profile.this, MainActivity.class);
                         startActivity(intent);
                         return true;
                     default:
