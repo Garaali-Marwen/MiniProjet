@@ -15,6 +15,10 @@
             android:name=".addFormationActivity"
             android:exported="false" />
         <activity
+            android:name=".Courses"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
             android:name=".signUp"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
