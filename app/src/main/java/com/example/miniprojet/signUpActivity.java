@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class signUp extends AppCompatActivity {
+public class signUpActivity extends AppCompatActivity {
 
     User user;
     EditText firstName;
@@ -107,7 +107,7 @@ public class signUp extends AppCompatActivity {
                             if (e instanceof FirebaseAuthUserCollisionException) {
                                 emailInput.setError("This email is already in use!");
                             } else {
-                                Toast.makeText(signUp.this, "Sign up failed.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(signUpActivity.this, "Sign up failed.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

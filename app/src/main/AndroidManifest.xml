@@ -15,16 +15,16 @@
             android:name=".addFormationActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile"
+            android:name=".ProfileActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
 
         <activity
-            android:name=".Courses"
+            android:name=".CoursesActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".signUp"
+            android:name=".signUpActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity

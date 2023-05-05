@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,7 +14,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
         if (currentUser != null) {
-            Intent intent = new Intent(this, Courses.class);
+            Intent intent = new Intent(this, CoursesActivity.class);
             startActivity(intent);
         }
     }
@@ -69,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             Toast.makeText(MainActivity.this, "Authentication success",
                                     Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(MainActivity.this, Courses.class);
+                            Intent intent = new Intent(MainActivity.this, CoursesActivity.class);
                             startActivity(intent);
                         } else {
                             try {
@@ -87,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void signUp(View v) {
-        Intent intent = new Intent(this, signUp.class);
+        Intent intent = new Intent(this, signUpActivity.class);
         startActivity(intent);
     }
 
@@ -98,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void profile(View item) {
-        Intent intent = new Intent(this, Profile.class);
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 }
