@@ -7,22 +7,16 @@
     android:background="@drawable/gradient_background"
     tools:context=".CoursesActivity">
 
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <ListView
+        android:id="@+id/coursesList"
+        android:layout_width="409dp"
+        android:layout_height="673dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Courses"
-            android:textSize="34sp" />
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        android:divider="#00000000"
+        android:dividerHeight="10dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

@@ -1,26 +1,22 @@
 package com.example.miniprojet;
 
-import java.util.Date;
 
-public class Formation {
+import java.io.Serializable;
 
-    public String description;
+public class Formation implements Serializable {
+
     public String title;
+    public String description;
     public String dateDebut;
     public String dateFin;
-    public String img;
+    public double prix;
+    public String centerId;
 
-    public Formation(){
+    public Formation() {
 
     }
-    public Formation( String description, String title, String dateDebut, String dateFin, String img) {
-        this.description = description;
-        this.title = title;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.img = img;
-    }
-        public String getDescription() {
+
+    public String getDescription() {
         return description;
     }
 
@@ -52,11 +48,20 @@ public class Formation {
         this.dateFin = dateFin;
     }
 
-    public String getImg() {
-        return img;
+    public double getPrix() {
+        return prix;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setPrix(double prix) {
+        this.prix = prix;
     }
+
+    public String getCenterId() {
+        return centerId;
+    }
+
+    public void setCenterId(String centerId) {
+        this.centerId = centerId;
+    }
+
 }

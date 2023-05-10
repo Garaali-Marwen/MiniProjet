@@ -35,8 +35,8 @@ public class signUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        firstName = findViewById(R.id.firstName);
-        lastName = findViewById(R.id.lastName);
+        firstName = findViewById(R.id.titre);
+        lastName = findViewById(R.id.description);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         candidat = findViewById(R.id.candidat);

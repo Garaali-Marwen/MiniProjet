@@ -88,15 +88,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, signUpActivity.class);
         startActivity(intent);
     }
-
-    public void signOut(View item) {
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void profile(View item) {
-        Intent intent = new Intent(this, ProfileActivity.class);
-        startActivity(intent);
-    }
 }
