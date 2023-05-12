@@ -5,15 +5,25 @@ import java.io.Serializable;
 
 public class Formation implements Serializable {
 
-    public String title;
-    public String description;
-    public String dateDebut;
-    public String dateFin;
-    public double prix;
-    public String centerId;
+
+    private String id;
+    private String title;
+    private String description;
+    private String dateDebut;
+    private String dateFin;
+    private double prix;
+    private String centerId;
 
     public Formation() {
 
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getDescription() {

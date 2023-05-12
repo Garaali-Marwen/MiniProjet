@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
     android:background="@drawable/gradient_background"
     tools:context=".signUpActivity">
 
@@ -11,7 +12,7 @@
         android:id="@+id/textView4"
         android:layout_width="241dp"
         android:layout_height="68dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-medium"
         android:text="Sign up"
         android:textAlignment="center"
@@ -23,8 +24,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="342dp"
-        android:layout_height="507dp"
+        android:layout_width="349dp"
+        android:layout_height="626dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,10 +33,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <EditText
-            android:id="@+id/titre"
+            android:id="@+id/firstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="16dp"
             android:ems="10"
             android:hint="First name"
             android:inputType="textPersonName"
@@ -44,10 +45,10 @@
             android:textColorHint="#FFFFFF" />
 
         <EditText
-            android:id="@+id/description"
+            android:id="@+id/lastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="16dp"
             android:ems="10"
             android:hint="Last name"
             android:inputType="textPersonName"
@@ -56,10 +57,22 @@
             android:textColorHint="#FFFFFF" />
 
         <EditText
+            android:id="@+id/tel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:hint="Tel"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+
+        <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="16dp"
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
@@ -71,7 +84,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="16dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
@@ -83,7 +96,7 @@
             android:id="@+id/role"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -102,6 +115,30 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
         </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#3042A5"
+                android:drawableStart="@drawable/baseline_image_24"
+                android:onClick="chooseImage"
+                android:text="Profile image" />
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="114dp"
+                android:layout_height="112dp"
+                app:srcCompat="@drawable/imgprofile" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/button2"

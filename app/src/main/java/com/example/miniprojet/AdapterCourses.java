@@ -12,9 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.ArrayList;
 
 public class AdapterCourses extends ArrayAdapter<Formation> {
@@ -34,11 +31,9 @@ public class AdapterCourses extends ArrayAdapter<Formation> {
         view= LayoutInflater.from(nContext).inflate(nRessource,parent,false);
         Button detailsButton = view.findViewById(R.id.details);
         TextView title= view.findViewById(R.id.courseName);
-        TextView description= view.findViewById(R.id.courseDescription);
         TextView price = view.findViewById(R.id.coursePrice);
         title.setText(getItem(position).getTitle());
-        description.setText(getItem(position).getDescription());
-        price.setText(String.valueOf(getItem(position).getPrix()));
+        price.setText(String.valueOf(getItem(position).getPrix())+" TND");
 
         detailsButton.setOnClickListener(new View.OnClickListener() {
             @Override

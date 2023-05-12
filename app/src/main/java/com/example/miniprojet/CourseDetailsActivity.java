@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,8 @@ public class CourseDetailsActivity extends AppCompatActivity {
     TextView beginDate;
     TextView endDate;
     TextView description;
+    TextView managerName;
+    TextView managerTel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,8 @@ public class CourseDetailsActivity extends AppCompatActivity {
         beginDate = findViewById(R.id.formationBegin);
         endDate = findViewById(R.id.formationEnd);
         description = findViewById(R.id.formationDecription);
+        managerName = findViewById(R.id.name);
+        managerTel = findViewById(R.id.managerPhone);
 
         Intent intent = getIntent();
         Formation formation = (Formation) intent.getSerializableExtra("course");
@@ -77,6 +83,22 @@ public class CourseDetailsActivity extends AppCompatActivity {
                 Toast.makeText(CourseDetailsActivity.this, "Error!", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        reference = FirebaseDatabase.getInstance().getReference().child("Users").child(formation.getCenterId());
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                managerName.setText(managerName.getText()+user.getFirstName()+" "+user.getLastName());
+                managerTel.setText(managerTel.getText()+user.getTel());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(CourseDetailsActivity.this, "Error!", Toast.LENGTH_SHORT).show();
+            }
+        });
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -106,5 +128,13 @@ public class CourseDetailsActivity extends AppCompatActivity {
             }
         });
 
+        managerTel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri dialUri = Uri.parse("tel:" + managerTel.getText().toString());
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL, dialUri);
+                startActivity(dialIntent);
+            }
+        });
     }
 }

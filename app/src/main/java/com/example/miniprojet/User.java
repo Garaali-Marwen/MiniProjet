@@ -4,9 +4,27 @@ public class User {
 
     private String lastName;
     private String firstName;
+    private String tel;
     private Role role;
+    private String img;
 
     public User() {
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
     public String getLastName() {

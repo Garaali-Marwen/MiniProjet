@@ -7,8 +7,11 @@
     tools:context=".CourseCard">
 
     <LinearLayout
-        android:layout_width="413dp"
-        android:layout_height="208dp"
+        android:layout_width="375dp"
+        android:layout_height="136dp"
+        android:background="@drawable/border"
+        android:backgroundTint="#57FFFFFF"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -18,58 +21,60 @@
 
         <ImageView
             android:id="@+id/courseImg"
-            android:layout_width="3dp"
-            android:layout_height="match_parent"
+            android:layout_width="15dp"
+            android:layout_height="62dp"
             android:layout_weight="1"
             android:src="@drawable/r" />
 
         <LinearLayout
-            android:layout_width="92dp"
+            android:layout_width="182dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingStart="20dp">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/courseName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="TextView"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="214dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="20dp">
 
-            <TextView
-                android:id="@+id/courseDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="TextView"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/courseName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="TextView"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/coursePrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="TextView"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/coursePrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="TextView"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:background="#FFFFFF"
+                android:layout_gravity="center_vertical|end"
+                android:background="#00FFFFFF"
                 android:drawableEnd="@drawable/baseline_arrow_forward_ios_24"
+                android:fontFamily="sans-serif-black"
                 android:minHeight="48dp"
-                android:text="View details"
-                android:textColor="#3648AC"
-                app:cornerRadius="10dp" />
-
+                android:text="Details"
+                android:textColor="#000000"
+                app:cornerRadius="10dp"
+                app:iconPadding="0dp" />
         </LinearLayout>
 
     </LinearLayout>
